@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-500">
           <p>&copy; {year} Wizebay Ltd. All rights reserved.</p>
           <div className="flex gap-4">
-            <span>VAT: BE 0123.456.789</span>
+            <span>VAT: BE 0748.291.635</span>
             <span>Registered in Belgium</span>
           </div>
         </div>

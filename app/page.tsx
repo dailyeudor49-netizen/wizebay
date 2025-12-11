@@ -3,123 +3,112 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="bg-white">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-orange-900 to-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+      {/* Hero - Minimal Clean */}
+      <section className="min-h-[80vh] flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 leading-tight">
+              Simple.<br />
+              <span className="text-orange-500">Wholesale.</span>
+            </h1>
+            <p className="text-xl text-gray-500 mb-12 leading-relaxed">
+              Electronics distribution without the complexity.
+              Quality products. Fair prices. Fast delivery.
+            </p>
+            <div className="flex gap-4">
+              <Link href="/products" className="px-8 py-4 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors">
+                View Products
+              </Link>
+              <Link href="/contact" className="px-8 py-4 text-gray-900 font-medium hover:text-orange-500 transition-colors">
+                Contact →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Minimal Stats */}
+      <section className="border-t border-b border-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-4 gap-8 text-center">
             <div>
-              <span className="text-orange-400 text-sm font-medium">Wholesale Tech Supplier</span>
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-5">
-                Premium Tech, <span className="text-orange-400">Best Prices</span>
-              </h1>
-              <p className="text-gray-300 text-lg mb-8">
-                Quality electronics and gadgets for businesses and individuals.
-                Worldwide delivery in 24/48h, payment on delivery.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/products" className="px-6 py-3 bg-orange-600 hover:bg-orange-500 text-white font-medium rounded-lg">
-                  View Products
-                </Link>
-                <Link href="/contact" className="px-6 py-3 border border-gray-500 hover:border-gray-400 text-white font-medium rounded-lg">
-                  Get Quote
-                </Link>
-              </div>
+              <div className="text-4xl font-light text-gray-900">2,600</div>
+              <div className="text-sm text-gray-400 mt-1">Products</div>
             </div>
-            <div className="hidden md:flex justify-center">
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { n: "2,600+", l: "Products" },
-                  { n: "450+", l: "Customers" },
-                  { n: "7", l: "Years" },
-                  { n: "24/48h", l: "Delivery" },
-                ].map((s, i) => (
-                  <div key={i} className="p-5 bg-gray-800/50 rounded-xl text-center">
-                    <div className="text-2xl font-bold text-orange-400">{s.n}</div>
-                    <div className="text-gray-400 text-sm">{s.l}</div>
-                  </div>
-                ))}
-              </div>
+            <div>
+              <div className="text-4xl font-light text-gray-900">450</div>
+              <div className="text-sm text-gray-400 mt-1">Clients</div>
+            </div>
+            <div>
+              <div className="text-4xl font-light text-gray-900">7</div>
+              <div className="text-sm text-gray-400 mt-1">Years</div>
+            </div>
+            <div>
+              <div className="text-4xl font-light text-gray-900">24h</div>
+              <div className="text-sm text-gray-400 mt-1">Delivery</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mobile Stats */}
-      <section className="md:hidden py-8 bg-orange-50">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-4 gap-2 text-center">
-          {[
-            { n: "2,600+", l: "Products" },
-            { n: "450+", l: "Customers" },
-            { n: "7", l: "Years" },
-            { n: "24/48h", l: "Delivery" },
-          ].map((s, i) => (
-            <div key={i}>
-              <div className="text-lg font-bold text-orange-600">{s.n}</div>
-              <div className="text-gray-600 text-xs">{s.l}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="py-16 md:py-20">
+      {/* Categories - Minimal Grid */}
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900">Product Categories</h2>
-            <p className="text-gray-600 mt-2">Browse our wholesale tech range</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <h2 className="text-2xl font-light text-gray-900 mb-12">Categories</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-gray-100">
             {[
-              { e: "🔊", n: "Speakers", h: "/products#speakers" },
-              { e: "🎧", n: "Audio", h: "/products#audio" },
-              { e: "🔋", n: "Power", h: "/products#power" },
-              { e: "⌚", n: "Wearables", h: "/products#wearables" },
-              { e: "📱", n: "Accessories", h: "/products#accessories" },
-              { e: "🔌", n: "Cables", h: "/products#cables" },
+              { name: "Audio", count: "680" },
+              { name: "Power", count: "420" },
+              { name: "Wearables", count: "310" },
+              { name: "Accessories", count: "590" },
+              { name: "Cables", count: "380" },
+              { name: "Cases", count: "220" },
             ].map((c, i) => (
-              <Link key={i} href={c.h} className="p-4 bg-gray-50 rounded-xl text-center hover:bg-orange-50 hover:ring-2 hover:ring-orange-200 transition-all">
-                <div className="text-3xl mb-2">{c.e}</div>
-                <div className="text-sm font-medium text-gray-800">{c.n}</div>
+              <Link key={i} href="/products" className="bg-white p-8 hover:bg-gray-50 transition-colors group">
+                <div className="text-sm text-gray-400 mb-1">{c.count} items</div>
+                <div className="text-xl text-gray-900 group-hover:text-orange-500 transition-colors">{c.name}</div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Us */}
-      <section className="py-16 md:py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-10">Why Wizebay?</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Features - Minimal List */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl font-light text-gray-900 mb-12">Why Wizebay</h2>
+          <div className="space-y-8">
             {[
-              { t: "Worldwide Delivery", d: "Fast shipping in 24/48h to countries worldwide. Costs vary by destination." },
-              { t: "Pay on Delivery", d: "No upfront payment. Inspect products before paying." },
-              { t: "Volume Discounts", d: "Competitive wholesale pricing with bulk discounts." },
-              { t: "Quality Tested", d: "Every product checked before shipping." },
+              { title: "Pay on delivery", desc: "No upfront payment required. Inspect before you pay." },
+              { title: "24-48h shipping", desc: "Fast delivery across Europe from our Belgian warehouse." },
+              { title: "Volume pricing", desc: "Better prices as your orders grow. Simple and transparent." },
+              { title: "Quality assured", desc: "Every product checked before shipping. Guaranteed." },
             ].map((f, i) => (
-              <div key={i} className="p-5 bg-gray-800 rounded-xl">
-                <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center mb-3">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+              <div key={i} className="flex gap-8 items-start border-b border-gray-200 pb-8">
+                <div className="text-4xl font-light text-gray-300">0{i + 1}</div>
+                <div>
+                  <h3 className="text-lg text-gray-900 mb-1">{f.title}</h3>
+                  <p className="text-gray-500">{f.desc}</p>
                 </div>
-                <h3 className="font-semibold mb-1">{f.t}</h3>
-                <p className="text-gray-400 text-sm">{f.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 md:py-20 bg-orange-600">
+      {/* CTA - Minimal */}
+      <section className="py-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Order?</h2>
-          <p className="text-orange-100 mb-8">Contact us for a personalised quote. No minimum for first orders.</p>
-          <Link href="/contact" className="inline-block px-8 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-orange-50">
-            Request Quote
+          <h2 className="text-3xl font-light text-gray-900 mb-6">Ready to start?</h2>
+          <p className="text-gray-500 mb-10">
+            No minimum order for new customers.
+          </p>
+          <Link href="/contact" className="inline-block px-10 py-4 bg-orange-500 text-white font-medium hover:bg-orange-600 transition-colors">
+            Get in Touch
           </Link>
-          <p className="text-orange-200 text-sm mt-4">Or email info@wizebay.com</p>
+          <p className="text-gray-400 text-sm mt-8">
+            info@wizebay.com
+          </p>
         </div>
       </section>
     </div>

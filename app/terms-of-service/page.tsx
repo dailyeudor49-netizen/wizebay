@@ -96,7 +96,7 @@ export default function TermsOfServicePage() {
                 Brussels 1050<br />
                 Belgium<br />
                 Email: info@wizebay.com<br />
-                VAT: BE 0123.456.789<br />
+                VAT: BE 0748.291.635<br />
                 Registered in Belgium
               </p>
             </div>
